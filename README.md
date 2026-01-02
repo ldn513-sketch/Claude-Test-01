@@ -78,21 +78,26 @@ Le programme utilise un **tri à bulles** (bubble sort) implémenté en assemble
 
 ## Fichiers
 
-- `anagram.asm` : Code source en assembleur i386
-- `Makefile` : Automatisation de la compilation
+### Code source (4 versions)
+- `anagram.asm` : NASM i386 (syntaxe Intel 32-bit)
+- `anagram64.asm` : NASM x86-64 (syntaxe Intel 64-bit)
+- `anagram-gas.s` : GNU Assembler i386 (syntaxe AT&T 32-bit)
+- `anagram64.s` : GNU Assembler x86-64 (syntaxe AT&T 64-bit)
+
+### Autres fichiers
+- `Makefile` : Automatisation avec détection d'architecture
 - `dict-fr.txt` : Dictionnaire de test en français
 - `dict-en.txt` : Dictionnaire de test en anglais
 - `README.md` : Cette documentation
+- `.gitignore` : Exclusion des fichiers compilés
 
 ## Caractéristiques techniques
 
-- **Architecture** : i386 (32-bit)
+- **Architecture** : i386 (32-bit) et x86-64 (64-bit)
+- **Détection automatique** : Architecture et assembleur disponible
 - **Appels système** : Linux syscalls directs (sans libc)
-  - `sys_open` (5) : Ouverture de fichier
-  - `sys_read` (3) : Lecture de fichier
-  - `sys_write` (4) : Écriture sur stdout
-  - `sys_close` (6) : Fermeture de fichier
-  - `sys_exit` (1) : Sortie du programme
+  - **32-bit** : `int 0x80` (sys_open=5, sys_read=3, sys_write=4, sys_close=6, sys_exit=1)
+  - **64-bit** : `syscall` (sys_open=2, sys_read=0, sys_write=1, sys_close=3, sys_exit=60)
 - **Buffer de lecture** : 4096 octets
 - **Longueur maximale** : 256 caractères par mot
 

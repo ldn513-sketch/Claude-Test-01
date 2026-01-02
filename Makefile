@@ -12,7 +12,7 @@ ifdef NASM
     AS = nasm
     ifeq ($(ARCH),x86_64)
         ASFLAGS = -f elf64
-        SRC = anagram.asm
+        SRC = anagram64.asm
         LDFLAGS = -m elf_x86_64
     else
         ASFLAGS = -f elf32
