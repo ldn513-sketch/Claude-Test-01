@@ -1,0 +1,8 @@
+# Fichiers compilés
+*.o
+anagram
+
+# Fichiers temporaires
+*~
+*.swp
+.DS_Store
