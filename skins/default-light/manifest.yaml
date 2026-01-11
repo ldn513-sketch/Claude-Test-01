@@ -1,0 +1,9 @@
+id: default-light
+name: SODA Light
+version: 1.0.0
+author: SODA Project
+description: Default light theme for SODA Player
+tags:
+  - light
+  - default
+  - modern

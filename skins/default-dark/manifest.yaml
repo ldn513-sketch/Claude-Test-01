@@ -1,0 +1,9 @@
+id: default-dark
+name: SODA Dark
+version: 1.0.0
+author: SODA Project
+description: Default dark theme for SODA Player
+tags:
+  - dark
+  - default
+  - modern

@@ -1,0 +1,113 @@
+<div id="app">
+    <!-- Header with window controls -->
+    <header class="titlebar">
+        <div class="app-title">
+            <span class="logo">SODA</span>
+            <span class="subtitle">Player</span>
+        </div>
+        <div class="window-controls">
+            <button class="btn-minimize" onclick="soda.minimizeWindow()">−</button>
+            <button class="btn-maximize" onclick="soda.maximizeWindow()">□</button>
+            <button class="btn-close" onclick="soda.closeWindow()">×</button>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="nav-menu">
+                <button class="nav-item active" data-view="library">
+                    <span class="icon">🎵</span>
+                    <span class="label">Library</span>
+                </button>
+                <button class="nav-item" data-view="playlists">
+                    <span class="icon">📋</span>
+                    <span class="label">Playlists</span>
+                </button>
+                <button class="nav-item" data-view="youtube">
+                    <span class="icon">▶</span>
+                    <span class="label">YouTube</span>
+                </button>
+                <button class="nav-item" data-view="podcasts">
+                    <span class="icon">🎙</span>
+                    <span class="label">Podcasts</span>
+                </button>
+                <button class="nav-item" data-view="settings">
+                    <span class="icon">⚙</span>
+                    <span class="label">Settings</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main view -->
+        <section class="main-view">
+            <!-- Search bar -->
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search music, artists, albums...">
+                <button id="search-btn" class="btn-search">Search</button>
+            </div>
+
+            <!-- Track list -->
+            <div id="track-list" class="track-list">
+                <div class="empty-state">
+                    <p>No tracks in your library</p>
+                    <p class="hint">Add music folders in Settings to get started</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Queue panel -->
+        <aside class="queue-panel">
+            <h3>Queue</h3>
+            <div id="queue-list" class="queue-list">
+                <div class="empty-state">
+                    <p>Queue is empty</p>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Now playing bar -->
+    <footer class="now-playing">
+        <!-- Track info -->
+        <div class="track-info">
+            <div id="cover-art" class="cover-art">
+                <div class="placeholder">♪</div>
+            </div>
+            <div class="track-details">
+                <div id="track-title" class="title">No track playing</div>
+                <div id="track-artist" class="artist">-</div>
+            </div>
+        </div>
+
+        <!-- Playback controls -->
+        <div class="controls">
+            <button id="btn-prev" class="btn-control" onclick="soda.previous()">⏮</button>
+            <button id="btn-play" class="btn-control btn-play" onclick="soda.togglePlayPause()">▶</button>
+            <button id="btn-next" class="btn-control" onclick="soda.next()">⏭</button>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-container">
+            <span id="time-current" class="time">0:00</span>
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+                <input type="range" id="progress-slider" class="progress-slider" min="0" max="100" value="0">
+            </div>
+            <span id="time-total" class="time">0:00</span>
+        </div>
+
+        <!-- Volume -->
+        <div class="volume-container">
+            <span class="volume-icon">🔊</span>
+            <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="80">
+        </div>
+
+        <!-- Extra controls -->
+        <div class="extra-controls">
+            <button id="btn-shuffle" class="btn-extra" onclick="soda.queueShuffle()">🔀</button>
+            <button id="btn-repeat" class="btn-extra">🔁</button>
+        </div>
+    </footer>
+</div>

@@ -1,0 +1,58 @@
+# SODA Player - Default Configuration
+# This file serves as a template for user configuration
+
+version: 1
+
+audio:
+  volume: 0.8
+  device: default
+  bufferSize: 1024
+  normalize: false
+
+playback:
+  repeat: off
+  shuffle: false
+  saveQueue: true
+  resume: true
+
+library:
+  folders: []
+  watch: true
+  scanInterval: 300
+
+cache:
+  maxSize: 1073741824  # 1GB
+  autoClean: true
+  expiryDays: 30
+
+downloads:
+  folder: ""
+  format: opus
+  quality: high
+  organize: true
+
+youtube:
+  enabled: true
+  autoUpdate: false
+  checkInterval: 3600
+
+podcasts:
+  enabled: true
+  autoDownload: false
+  retentionDays: 30
+
+interface:
+  skin: default-dark
+  language: en
+  notifications: true
+  minimizeToTray: false
+
+privacy:
+  scrobbling: false
+  lastfmUser: ""
+  lastfmSession: ""
+
+advanced:
+  logLevel: 1
+  hwAccel: true
+  httpTimeout: 30
